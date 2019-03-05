@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Someclassidelete\ATM.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="TransponderReceiver">
       <HintPath>..\TransponderReceiver.dll</HintPath>
     </Reference>
