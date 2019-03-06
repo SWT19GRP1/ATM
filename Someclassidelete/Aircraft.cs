@@ -1,22 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 namespace ATM
 {
     public class Aircraft : IVehicle
     {
-        public int x { get; private set; }
-        public int y { get; private set; }
-        public int z { get; private set; }
-        public DateTime timestamp { get; private set; }
-        public string tag { get; private set; }
-        public double speed { get; private set; }
-        public int direction { get; private set; }
+        public int X { get; private set; }
+        public int Y { get; private set; }
+        public int Z { get; private set; }
+        public DateTime Timestamp { get; private set; }
+        public string Tag { get; private set; }
+        public double Speed { get; private set; }
+        public int Direction { get; private set; }
 
-        public void update(string tag, int x, int y, int z, DateTime time)
+        public Aircraft(int x, int y, int z, DateTime timestamp, string tag, double speed, int direction)
         {
-            ;
+            this.X = x;
+            this.Y = y;
+            this.Z = z;
+            this.Timestamp = timestamp;
+            this.Tag = tag;
+            this.Speed = speed;
+            this.Direction = direction;
+        }
+        public void Update(string tag, int x, int y, int z, DateTime time)
+        {
+           
         }
     }
 }
