@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace ATM
 {
-    class LogOutput:IOutput
+    public interface IOutput
     {
-        public void logVehicleData()
-        {
-
-        }
+        void logVehicleData(List<IVehicle> V);
     }
 }
