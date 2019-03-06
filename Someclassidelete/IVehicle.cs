@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ATM
 {
-    interface IVehicle
+    public interface IVehicle
     {
         int Y { get; }
         int X { get; }
@@ -13,6 +13,6 @@ namespace ATM
         string Tag { get; }
         double Speed { get; }
         int Direction { get; }
-        void Update(string tag, int x, int y, int z, DateTime time);
+        void Update(IVehicle old);
     }
 }

@@ -26,9 +26,21 @@ namespace ATM
             this.Speed = speed;
             this.Direction = direction;
         }
-        public void Update(string tag, int x, int y, int z, DateTime time)
+
+        public void Update(IVehicle old)
         {
-           
+            var deltaX = this.X - old.X;
+            var deltaY = this.Y - old.Y;
+            var deltaZ = this.Z - old.Z;
+
+            var distance = (float) Math.Sqrt(deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ);
+
+            var timeDiff = this.Timestamp - this.Timestamp;
+
+            var timeDiffInSec = timeDiff.TotalSeconds;
+
+            this.Speed = distance / timeDiffInSec;
+
         }
     }
 }
