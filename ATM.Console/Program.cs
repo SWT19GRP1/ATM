@@ -13,8 +13,7 @@ namespace ATM.Console
         private static void Main(string[] args)
         {
             var reciever = TransponderReceiverFactory.CreateTransponderDataReceiver();
-            var transponderReciever = new TransponderReciever(reciever);
-            var trackfilter = new TrackFilter(transponderReciever);
+            var trackfilter = new TrackFilter(reciever);
             while (true)
             {
                 

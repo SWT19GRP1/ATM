@@ -14,7 +14,11 @@ namespace ATM
             Console.WriteLine("Current Airplanes in Airspace:");
             foreach (var plane in vehicles)
             {
-                Console.WriteLine("Tag:{0}, Speed:{1}, Coordinates:{2},{3},{4} - Date: {5}/{6}-{7} {8}:{9}",plane.Tag,plane.Speed,plane.X,plane.Y,plane.Z,plane.Timestamp.Day,plane.Timestamp.Month,plane.Timestamp.Year,plane.Timestamp.Hour,plane.Timestamp.Minute);
+                Console.Write("Tag: {0} ",plane.Tag);
+                Console.Write("Speed: {0} ",plane.Speed);
+                Console.Write("Direction: {0} ",plane.Direction);
+                Console.Write("Coordinates: {0},{1},{2} ", plane.X, plane.Y, plane.Z);
+                Console.Write("Date: {0}/{1}-{2} {3}:{4}:{5}:{6}\n\r", plane.Timestamp.Day, plane.Timestamp.Month, plane.Timestamp.Year, plane.Timestamp.Hour, plane.Timestamp.Minute, plane.Timestamp.Second, plane.Timestamp.Millisecond);
             }
             
         }
