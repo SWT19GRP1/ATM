@@ -7,6 +7,8 @@ namespace ATM
     {
         private ITransponderReceiver _receiver;
 
+        public event EventHandler<RawTransponderDataEventArgs> RaiseTrackInboundEvent; 
+
         public TransponderReciever(ITransponderReceiver receiver)
         {
             _receiver = receiver;
@@ -22,12 +24,16 @@ namespace ATM
         {
             _receiver.TransponderDataReady -= RecieverOnTransportDataReady;
         }
-        private static void RecieverOnTransportDataReady(object sender, RawTransponderDataEventArgs e)
+        private void RecieverOnTransportDataReady(object sender, RawTransponderDataEventArgs e)
         {
-            foreach (var data in e.TransponderData)
-            {
-                Console.WriteLine($"Transponderdata {data}");
-            }
+           OnTrackInboundEvent(e);          
+        }
+
+        protected virtual void OnTrackInboundEvent(RawTransponderDataEventArgs e)
+        {
+            EventHandler<RawTransponderDataEventArgs> handler = RaiseTrackInboundEvent;
+
+            handler?.Invoke(this, e);
         }
     }
 }
