@@ -14,7 +14,7 @@ namespace ATM
         public int YWidth { get; set; }
         public int ZHeight { get; set; }
         public TrackFilter(TransponderReciever publisher, int xOffset = 0, int yOffset = 0,
-            int zOffset = 0, int xLength = 0, int yWidth = 0, int zHeight = 0)
+            int zOffset = 500, int xLength = 80000, int yWidth = 80000, int zHeight = 19500)
         {
             publisher.RaiseTrackInboundEvent += HandlerOnRaiseTrackInsideMonitoringAreaEvent;
             XOffset = xOffset;
@@ -47,7 +47,7 @@ namespace ATM
                         Console.WriteLine(" Not inbound:" + tag + "\t" + xCoordinate + "\t" + yCoordinate + "\t" + zCoordinate + "\t" + time);
                         if ((zCoordinate >= ZOffset) && (zCoordinate <= (zCoordinate + ZHeight)))
                         {
-                            Console.WriteLine("Inbound:" + tag + "\t" + xCoordinate + "\t" + yCoordinate + "\t" + zCoordinate + "\t" + time);
+                            Console.WriteLine("Inbound:   " + tag + "\t" + xCoordinate + "\t" + yCoordinate + "\t" + zCoordinate + "\t" + time);
                         }
                     }
                 }
