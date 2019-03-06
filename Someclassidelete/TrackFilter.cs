@@ -40,8 +40,7 @@ namespace ATM
                 var yCoordinate = int.Parse(tokens[2]);
                 var zCoordinate = int.Parse(tokens[3]);
                 var time = long.Parse(tokens[4]);
-
-                Console.WriteLine("Detected: " + tag + "\t" + xCoordinate + "\t" + yCoordinate + "\t" + zCoordinate + "\t" + time);
+                Console.WriteLine("Observed:  " + tag + "\t" + xCoordinate + "\t" + yCoordinate + "\t" + zCoordinate + "\t" + time);
                 if ((xCoordinate >= XOffset) && (xCoordinate <= (XOffset + XLength)))
                 {
                     if (yCoordinate >= YOffset && yCoordinate <= YOffset + YWidth)

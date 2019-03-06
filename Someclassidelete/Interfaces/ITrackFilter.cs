@@ -1,4 +1,5 @@
 ﻿using System;
+using TransponderReceiver;
 
 namespace ATM
 {
@@ -8,6 +9,6 @@ namespace ATM
     }
     public interface ITrackFilter
     {
-        
+        event EventHandler<RawTransponderDataEventArgs> RawDataEvent;
     }
 }

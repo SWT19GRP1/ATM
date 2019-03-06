@@ -8,6 +8,6 @@ namespace ATM
 {
     interface IOutput
     {
-        void logVehicleData(IVehicle V);
+        void logVehicleData(List<IVehicle> V);
     }
 }
