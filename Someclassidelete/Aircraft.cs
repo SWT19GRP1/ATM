@@ -10,6 +10,7 @@ namespace ATM
         public int y { get; private set; }
         public int z { get; private set; }
         public DateTime timestamp { get; private set; }
+        public string tag { get; private set; }
         public double speed { get; private set; }
         public int direction { get; private set; }
 
