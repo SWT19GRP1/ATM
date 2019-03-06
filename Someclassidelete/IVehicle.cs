@@ -10,5 +10,6 @@ namespace ATM
         int x { get; set; }
         int z { get; set; }
         DateTime timestamp { get; set; }
+        double speed { get; set; }
     }
 }

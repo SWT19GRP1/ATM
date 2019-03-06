@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ATM.Console
+namespace ATM
 {
-    class TerminalOutput:IOutput
+    class LogOutput:IOutput
     {
         public void logVehicleData()
         {

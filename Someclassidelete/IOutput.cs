@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ATM.Console
+namespace ATM
 {
     interface IOutput
     {
-        void logVehicleData();
+        void logVehicleData(IVehicle V);
     }
 }
