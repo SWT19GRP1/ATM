@@ -12,5 +12,6 @@ namespace ATM
         DateTime timestamp { get; set; }
         double speed { get; set; }
         string tag { get; set; }
+        int dir { get; set; }
     }
 }

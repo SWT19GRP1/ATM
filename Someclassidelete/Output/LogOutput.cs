@@ -10,10 +10,14 @@ namespace ATM
     {
         public void logVehicleData(List<IVehicle> vehicles)
         {
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             foreach (var plane in vehicles)
             {
-               // string s = "Tag: "+plane.tag+"Coordinates"
-                 //          System.IO.File.AppendAllText(,s);
+                string general = "Tag: " + plane.tag + "Coordinates: " + plane.x + "," + plane.y + "," + plane.z+ "Direction:" + plane.dir;
+                string date = " Date: " + plane.timestamp.Day + "/" + plane.timestamp.Month + "-" +
+                              plane.timestamp.Year + "  " + plane.timestamp.Hour + ":" + plane.timestamp.Minute + ":" +
+                              plane.timestamp.Second + ":" + plane.timestamp.Millisecond;
+                System.IO.File.AppendAllText(path,general+date);
             }
         }
     }
