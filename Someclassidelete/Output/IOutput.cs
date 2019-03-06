@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ATM
 {
-    interface IOutput
+    public interface IOutput
     {
-        void logVehicleData(IVehicle V);
+        void logVehicleData(List<IVehicle> V);
     }
 }
