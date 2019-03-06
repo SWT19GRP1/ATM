@@ -6,12 +6,13 @@ namespace ATM
 {
     public interface IVehicle
     {
-        int y { get; set; }
-        int x { get; set; }
-        int z { get; set; }
-        DateTime timestamp { get; set; }
-        double speed { get; set; }
-        string tag { get; set; }
-        int dir { get; set; }
+        int Y { get; }
+        int X { get; }
+        int Z { get; }
+        DateTime Timestamp { get; }
+        string Tag { get; }
+        double Speed { get; }
+        int Direction { get; }
+        void Update(string tag, int x, int y, int z, DateTime time);
     }
 }

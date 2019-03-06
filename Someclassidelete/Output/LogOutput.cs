@@ -13,10 +13,10 @@ namespace ATM
             string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             foreach (var plane in vehicles)
             {
-                string general = "Tag: " + plane.tag + "Coordinates: " + plane.x + "," + plane.y + "," + plane.z+ "Direction:" + plane.dir;
-                string date = " Date: " + plane.timestamp.Day + "/" + plane.timestamp.Month + "-" +
-                              plane.timestamp.Year + "  " + plane.timestamp.Hour + ":" + plane.timestamp.Minute + ":" +
-                              plane.timestamp.Second + ":" + plane.timestamp.Millisecond;
+                string general = "Tag: " + plane.Tag + "Coordinates: " + plane.X + "," + plane.Y + "," + plane.Z+ "Direction:" + plane.Direction;
+                string date = " Date: " + plane.Timestamp.Day + "/" + plane.Timestamp.Month + "-" +
+                              plane.Timestamp.Year + "  " + plane.Timestamp.Hour + ":" + plane.Timestamp.Minute + ":" +
+                              plane.Timestamp.Second + ":" + plane.Timestamp.Millisecond;
                 System.IO.File.AppendAllText(path,general+date);
             }
         }
