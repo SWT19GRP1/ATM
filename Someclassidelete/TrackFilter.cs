@@ -40,7 +40,10 @@ namespace ATM
                 var yCoordinate = int.Parse(tokens[2]);
                 var zCoordinate = int.Parse(tokens[3]);
                 var time = long.Parse(tokens[4]);
-                Console.WriteLine("Observed:  " + tag + "\t" + xCoordinate + "\t" + yCoordinate + "\t" + zCoordinate + "\t" + time);
+                var year = int.Parse(tokens[4].Substring(0, 5));
+                Console.WriteLine("Observed:  " + tag + "\t" + xCoordinate + "\t" + yCoordinate + "\t" + zCoordinate + "\t");
+                var s = GetDate(tokens[4]);
+                Console.WriteLine(s.Year +" "+ s.Month +" "+ s.Day +" "+ s.Hour +" "+ s.Minute +" "+ s.Second +" "+ s.Millisecond);
                 if ((xCoordinate >= XOffset) && (xCoordinate <= (XOffset + XLength)))
                 {
                     if (yCoordinate >= YOffset && yCoordinate <= YOffset + YWidth)
@@ -53,6 +56,20 @@ namespace ATM
                 }
                 Console.WriteLine();
             }
+        }
+
+        private DateTime GetDate(string date)
+        {
+            int year   = int.Parse(date.Substring(0,4));
+            var month  = int.Parse(date.Substring(4,2));
+            var day    = int.Parse(date.Substring(6, 2));
+            var hour   = int.Parse(date.Substring(8, 2));
+            var minute = int.Parse(date.Substring(10, 2));
+            var second = int.Parse(date.Substring(12, 2));
+            var milli  = int.Parse(date.Substring(14, 3));
+            var returnDateTime= new DateTime(year,month,day,hour,minute,second,milli);
+
+            return returnDateTime;
         }
     }
 }

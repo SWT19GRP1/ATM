@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ATM.Interfaces;
 
 namespace ATM
 {
     interface IOutput
     {
-        void logVehicleData(List<IVehicle> V);
+        IVehicleFormatter Formatter { get; set; }
+        void LogVehicleData(List<IVehicle> v);
     }
 }
