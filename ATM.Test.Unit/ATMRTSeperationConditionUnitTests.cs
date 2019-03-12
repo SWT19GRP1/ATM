@@ -8,7 +8,7 @@ namespace ATM.Test.Unit
 {
     [TestFixture]
     [Author("Christian Melsen")]
-    public class TestATM_RT_Separation_Condition
+    public class ATMRTSeparationCondition
     {
         private ATM_RT_Separation_Condition _uut;
         private List<Aircraft> aircrafts;
