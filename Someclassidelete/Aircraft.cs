@@ -19,7 +19,7 @@ namespace ATM
         public Aircraft(int x, int y, int z, DateTime timestamp, string tag, double speed, int direction)
         {
             this.X = x;
-            this.Y = y;
+            this.Y = y; 
             this.Z = z;
             this.Timestamp = timestamp;
             this.Tag = tag;
@@ -29,18 +29,24 @@ namespace ATM
 
         public void Update(IVehicle old)
         {
-            var deltaX = this.X - old.X;
-            var deltaY = this.Y - old.Y;
-            var deltaZ = this.Z - old.Z;
 
-            var distance = (float) Math.Sqrt(deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ);
 
-            var timeDiff = this.Timestamp - this.Timestamp;
+            if (this.Tag != old.Tag) return;
 
-            var timeDiffInSec = timeDiff.TotalSeconds;
+                this.Timestamp = old.Timestamp;
+        
+                var deltaX = this.X - old.X;
+                var deltaY = this.Y - old.Y;
+                var deltaZ = this.Z - old.Z;
 
-            this.Speed = distance / timeDiffInSec;
+                var distance = (float) Math.Sqrt(deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ);
+                var timeDiff = this.Timestamp - this.Timestamp;
+                var timeDiffInSec = timeDiff.TotalSeconds;
 
+                this.Speed = distance / timeDiffInSec;
+
+                var bearing = Math.Atan(deltaY/deltaX) + 90.00;
+                this.Direction = (int) Math.Round(bearing);
         }
     }
 }
