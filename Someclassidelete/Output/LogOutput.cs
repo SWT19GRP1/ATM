@@ -15,11 +15,11 @@ namespace ATM
         }
         public void LogVehicleData(List<IVehicle> vehicles)
         {
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+@"\LoggedAirplanes.txt";
             foreach (var plane in vehicles)
             {
 
-                System.IO.File.AppendAllText(path,Formatter.vehicleToString(plane));
+                System.IO.File.AppendAllText(path,Formatter.VehicleToString(plane));
             }
         }
 

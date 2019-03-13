@@ -7,7 +7,7 @@ using ATM.Interfaces;
 
 namespace ATM
 {
-    interface IOutput
+    public interface IOutput
     {
         IVehicleFormatter Formatter { get; set; }
         void LogVehicleData(List<IVehicle> v);
